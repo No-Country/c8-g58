@@ -7,13 +7,28 @@ const getPublications = async(req, res) => {
 }
 
 const getPublicationByName = async(req, res) => {
-  const publicationsDb = await Publication.findAll({})
-  res.status(200).json(publicationsDb)
+
+  res.status(200).json('name')
 }
 
 const getPublicationDetail = async(req, res) => {
-  const publicationsDb = await Publication.findAll({})
-  res.status(200).json(publicationsDb)
+  const { id } = req.params
+  const idUUID = id.length
+  console.log(idUUID)
+  try {
+    if(idUUID !== 36){
+      res.status(200).json('codigo de la api')
+    } else if(idUUID === 36){
+      const publicationDetail = await Publication.findAll({
+        where: { id : id }
+      })
+      publicationDetail.length > 0 ?
+      res.status(200).json(publicationDetail) :
+      res.status(500).send('No existe este codigo')
+    }
+  } catch (error) {
+    console.log(error.message)
+  }
 }
 
 const getPublicationByLocation = async(req, res) => {

@@ -13,7 +13,7 @@ router.get('/', getPublications);
 router.get('/detail/:id', getPublicationDetail);
 
 //Get Publications Detail
-router.get('/nmae/:name', getPublicationByName);
+router.get('/name/:name', getPublicationByName);
 
 //Get Publications by Location
 router.get('/location/:location', getPublicationByLocation);
