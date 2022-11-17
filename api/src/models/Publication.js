@@ -11,6 +11,10 @@ module.exports = (sequelize) => {
 				defaultValue: DataTypes.UUIDV4,
 				primaryKey: true
 			},
+			name: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
 			image: {
 				type: DataTypes.STRING
 			},
@@ -22,8 +26,7 @@ module.exports = (sequelize) => {
 				allowNull: false
 			},
 			location: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			}
 		},
 		{ timestamps: false }
