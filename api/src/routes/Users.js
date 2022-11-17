@@ -1,10 +1,33 @@
 const { Router } = require('express');
 const router = Router();
 
-const axios = require('axios');
+const { getUsers, getUserDetail } = require('../controllers/user/getUser')
+const { postUser } = require('../controllers/user/postUser')
+const { putEmail, putPassword, putImage, putCel } = require('../controllers/user/putUser')
+const { deleteUser } = require('../controllers/user/deleteUser')
 
-router.get('/', (req, res) => {
-	res.send('Hola');
-});
+//Get Users
+router.get('/', getUsers);
+
+//Get Users Detail
+router.get('/detail/:id', getUserDetail);
+
+//Put Email
+router.put('/email/:id', putEmail);
+
+//Put Password
+router.put('/password/:id', putPassword);
+
+//Put Image
+router.put('/image/:id', putImage);
+
+//Put Cel
+router.put('/cel/:id', putCel);
+
+//Delete User
+router.delete('/:id', deleteUser);
+
+//Post User
+router.post('/', postUser);
 
 module.exports = router;
