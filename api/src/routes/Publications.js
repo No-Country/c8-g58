@@ -11,7 +11,7 @@ const {
 const {
 	postPublication
 } = require('../controllers/publication/postPublication');
-const { putLocation } = require('../controllers/publication/putPublication');
+const { putLocation, putName, putImage, putText, putEvent } = require('../controllers/publication/putPublication');
 const {
 	deletePublication
 } = require('../controllers/publication/deletePublication');
@@ -33,6 +33,18 @@ router.get('/event/:event', getPublicationByEvent);
 
 //Put Location
 router.put('/location/:id', putLocation);
+
+//Put Location
+router.put('/name/:id', putName);
+
+//Put Location
+router.put('/image/:id', putImage);
+
+//Put Location
+router.put('/text/:id', putText);
+
+//Put Location
+router.put('/event/:id', putEvent);
 
 //Delete Publication
 router.delete('/:id', deletePublication);

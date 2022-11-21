@@ -4,12 +4,24 @@ const postUser = async(req, res) => {
   try {
     const { name, password, dni, years, email, image, cel } = req.body
 
+    const nameArray = name.split(' ')
+    for (let i = 0; i < nameArray.length; i++){
+      const caracterName = nameArray[i].split('')
+      caracterName[0] = caracterName[0].toUpperCase()
+        for (let i = 1; i < caracterName.length; i++) {
+          caracterName[i] = caracterName[i].toLowerCase()     
+        }
+      const modCarac = caracterName.join('')
+      nameArray[i] = modCarac
+    }
+    const nameDb = nameArray.join(' ')
+
     const userCreated = await User.create({
-      name,
+      name: nameDb,
       password,
       dni,
       years,
-      email,
+      email: email.toLowerCase(),
       image,
       cel
     })

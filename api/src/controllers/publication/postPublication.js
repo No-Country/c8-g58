@@ -2,9 +2,10 @@ const { Publication } = require('../../db')
 
 const postPublication = async(req, res) => {
   try {
-    const { image, text, event, location } = req.body
+    const { name, image, text, event, location } = req.body
 
     const publicationCreated = await Publication.create({
+      name,
       image,
       text,
       event: event.toLowerCase(),

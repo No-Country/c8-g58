@@ -3,7 +3,7 @@ const router = Router();
 
 const { getUsers, getUserDetail } = require('../controllers/user/getUser')
 const { postUser } = require('../controllers/user/postUser')
-const { putEmail, putPassword, putImage, putCel } = require('../controllers/user/putUser')
+const { putName, putEmail, putPassword, putImage, putCel } = require('../controllers/user/putUser')
 const { deleteUser } = require('../controllers/user/deleteUser')
 
 //Get Users
@@ -11,6 +11,9 @@ router.get('/', getUsers);
 
 //Get Users Detail
 router.get('/detail/:id', getUserDetail);
+
+//Put Name
+router.put('/name/:id', putName);
 
 //Put Email
 router.put('/email/:id', putEmail);
