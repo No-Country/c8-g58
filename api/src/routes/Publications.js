@@ -4,7 +4,9 @@ const router = Router();
 const {
 	getPublications,
 	// getPublicationByName,
-	getPublicationDetail
+	getPublicationDetail,
+	getIdProvincia,
+	getBarrios
 	// getPublicationByLocation,
 	// getPublicationByEvent
 } = require('../controllers/publication/getPublication');
@@ -21,6 +23,10 @@ router.get('/', getPublications);
 
 //Get Publications Detail
 router.get('/detail/:id', getPublicationDetail);
+
+router.get('/idprovincia', getIdProvincia);
+
+router.get('/barrios/:idProvincia', getBarrios);
 
 //Get Publications Detail
 // router.get('/name/:name', getPublicationByName);
