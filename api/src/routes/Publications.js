@@ -3,10 +3,10 @@ const router = Router();
 
 const {
 	getPublications,
-	getPublicationByName,
-	getPublicationDetail,
-	getPublicationByLocation,
-	getPublicationByEvent
+	// getPublicationByName,
+	getPublicationDetail
+	// getPublicationByLocation,
+	// getPublicationByEvent
 } = require('../controllers/publication/getPublication');
 const {
 	postPublication
@@ -23,13 +23,13 @@ router.get('/', getPublications);
 router.get('/detail/:id', getPublicationDetail);
 
 //Get Publications Detail
-router.get('/name/:name', getPublicationByName);
+// router.get('/name/:name', getPublicationByName);
 
 //Get Publications by Location
-router.get('/location/:location', getPublicationByLocation);
+// router.get('/location/:location', getPublicationByLocation);
 
 //Get Publications by Event
-router.get('/event/:event', getPublicationByEvent);
+// router.get('/event/:event', getPublicationByEvent);
 
 //Put Location
 router.put('/location/:id', putLocation);
