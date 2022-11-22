@@ -78,11 +78,48 @@ const getPublicationByEvent = async (req, res) => {
 	}
 };
 
+const getIdProvincia = async(req, res) => {
+	try {
+		const barrios = await axios(`https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre`)
+		let listOfProvincias = barrios.data.provincias.map((e) => {
+			return {
+				id: e.id,
+				nombre: e.nombre,
+			};
+		});
+		res.status(200).json(listOfProvincias)
+	}
+	 catch (error) {
+		res.status(500).send(error.message)
+	}
+}
+
+const getBarrios = async(req, res) => {
+	//Provincias 86-30-78-02 no tienen municipio
+	const { idProvincia } = req.params;
+	if(idProvincia){
+	try {
+		const barrios = await axios(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${idProvincia}&campos=nombre&max=426`)
+		let listOfMunicipios = barrios.data.municipios.map((e) => {
+			return {
+				nombre: e.nombre,
+			};
+		});
+		res.status(200).json(listOfMunicipios)
+	}
+	 catch (error) {
+		res.status(500).send(error.message)
+	}
+}
+}
+
 module.exports = {
 	preload,
 	getPublications,
 	getPublicationDetail,
 	getPublicationByName,
 	getPublicationByLocation,
-	getPublicationByEvent
+	getPublicationByEvent,
+	getIdProvincia,
+	getBarrios
 };
