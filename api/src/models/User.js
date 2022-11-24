@@ -36,6 +36,14 @@ module.exports = (sequelize) => {
 			},
 			cel: {
 				type: DataTypes.INTEGER
+			},
+			banned: {
+				type: DataTypes.BOOLEAN,
+				allowNull: false
+			},
+			admin: {
+				type: DataTypes.BOOLEAN,
+				allowNull: false
 			}
 		},
 		{ timestamps: false }

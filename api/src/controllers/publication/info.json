@@ -1,0 +1,33 @@
+[
+	{
+		"name": "Recital de Coldplay",
+		"image": "https://indiehoy.com/wp-content/uploads/2022/08/coldplay-ultimo-show.jpg",
+		"text": "Ando buscando un grupo copado de gente que se quiera sumar al recital de Coldplay este 8 de noviembre,a  ver quien se suma! <3",
+		"event": "Recital",
+		"location": "Nuñez, https://www.google.com/maps/place/Estadio+M%C3%A2s+Monumental/@-34.5453062,-58.4519636,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb43ae6018ddf:0x3d7f60a75bfa308a!8m2!3d-34.5453062!4d-58.4497749"
+	},
+
+	{
+		"name": "Acatraz",
+		"image": "https://9968c6ef49dc043599a5-e151928c3d69a5a4a2d07a8bf3efa90a.ssl.cf2.rackcdn.com/351988.jpg",
+		"text": "El jueves sale after en Acatraz genteeeeeeee",
+		"event": "After office",
+		"location": "Almagro, https://www.google.com/maps/place/Acatraz/@-34.6113355,-58.4197429,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcca5f63099f1b:0xde4ad8f1f7656107!8m2!3d-34.6113399!4d-58.4175542"
+	},
+
+	{
+		"name": "Wakanda forever",
+		"image": "https://www.metroworldnews.com/resizer/FwUm-N8N-Be4a0uIeFOXBhjJrIA=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/H3NQCMRDAVB5RMUNJ4SSVO2Y2E.jpg",
+		"text": "Alguien se copa para ir a ver Wakanda forever?",
+		"event": "pelicula",
+		"location": "Recoleta, https://www.google.com/maps/place/Cin%C3%A9polis+Recoleta/@-34.5889864,-58.3983518,17z/data=!3m2!4b1!5s0x95bccaa29a9c4b5f:0xa2359aebac38f86e!4m5!3m4!1s0x95bccaa28fffbeeb:0x1db9af96c3aab6b0!8m2!3d-34.5889909!4d-58.3938671"
+	},
+
+	{
+		"name": "Bar hopping",
+		"image": "https://www.lanacion.com.ar/resizer/um37DSgDyWjYR2RH6Tcj5l-mYC0=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NU43J76OCZEUHJMKKUWU63BRZ4.jpg",
+		"text": "Bar hopping por San Isidro, todos invitados!",
+		"event": "Bar hopping",
+		"location": "San Isidro, https://www.google.com/maps/place/San+Isidro,+Provincia+de+Buenos+Aires/@-34.4720202,-58.5460994,14z/data=!3m1!4b1!4m5!3m4!1s0x95bcb03cd891437f:0xab3b49e671350275!8m2!3d-34.470829!4d-58.5286102 "
+	}
+]

@@ -1,21 +1,26 @@
 const axios = require('axios');
-const { User, Publication } = require('../../db');
+const { User, Publication, Review } = require('../../db');
+const allInfo = require('./info.json');
 
 const preload = async () => {
 	try {
-		let concertsApi = await axios.get(
-			'https://api.seatgeek.com/2/events?client_id=MzAyMzcwODB8MTY2ODA4NjE2OS42NzE3MTc2'
-		);
-		let mapApi = concertsApi.data.events.map((e) => {
-			return {
-				name: e.performers[0].name,
-				image: e.performers[0].image,
-				text: e.performers[0].url,
-				event: e.type
-			};
-		});
-		mapApi.forEach(async (e) => {
-			await Publication.create(e);
+		// let concertsApi = await axios.get(
+		// 	'https://api.seatgeek.com/2/events?client_id=MzAyMzcwODB8MTY2ODA4NjE2OS42NzE3MTc2'
+		// );
+		// let mapApi = concertsApi.data.events.map((e) => {
+		// 	return {
+		// 		name: e.performers[0].name,
+		// 		image: e.performers[0].image,
+		// 		text: e.performers[0].url,
+		// 		event: e.type
+		// 	};
+		// });
+		// mapApi.forEach(async (e) => {
+		// 	await Publication.create(e);
+		// });
+
+		allInfo.forEach(async (p) => {
+			await Publication.create(p);
 		});
 	} catch (e) {
 		console.log(e);
@@ -60,7 +65,7 @@ const filterByEvent = async (event) => {
 const getPublications = async (req, res) => {
 	const { name, location, event } = req.query;
 	try {
-		publicationsDb = await Publication.findAll({});
+		publicationsDb = await Publication.findAll({ include: Review });
 
 		if (name || location || event) {
 			var info;
@@ -92,7 +97,8 @@ const getPublicationDetail = async (req, res) => {
 			res.status(200).json('codigo de la api');
 		} else if (idUUID === 36) {
 			const publicationDetail = await Publication.findAll({
-				where: { id: id }
+				where: { id: id },
+				include: Review
 			});
 			publicationDetail.length > 0
 				? res.status(200).json(publicationDetail)

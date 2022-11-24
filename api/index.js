@@ -4,7 +4,7 @@ const { preload } = require('./src/controllers/publication/getPublication.js');
 const { Publication } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(async () => {
+conn.sync({ force: true }).then(async () => {
 	const data = await Publication.findAll();
 	if (!data.length) {
 		await preload();

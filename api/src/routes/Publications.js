@@ -28,10 +28,6 @@ const {
 //Get all Publications
 router.get('/', getPublications);
 
-router.get('/idprovincia', getIdProvincia);
-
-router.get('/barrios/:idProvincia', getBarrios);
-
 //Get Publications Detail
 router.get('/detail/:id', getPublicationDetail);
 

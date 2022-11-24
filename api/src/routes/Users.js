@@ -1,10 +1,18 @@
 const { Router } = require('express');
 const router = Router();
 
-const { getUsers, getUserDetail } = require('../controllers/user/getUser')
-const { postUser } = require('../controllers/user/postUser')
-const { putName, putEmail, putPassword, putImage, putCel } = require('../controllers/user/putUser')
-const { deleteUser } = require('../controllers/user/deleteUser')
+const { getUsers, getUserDetail } = require('../controllers/user/getUser');
+const { postUser } = require('../controllers/user/postUser');
+const {
+	putName,
+	putEmail,
+	putPassword,
+	putImage,
+	putCel,
+	putBanned,
+	putAdmin
+} = require('../controllers/user/putUser');
+const { deleteUser } = require('../controllers/user/deleteUser');
 
 //Get Users
 router.get('/', getUsers);
@@ -26,6 +34,12 @@ router.put('/image/:id', putImage);
 
 //Put Cel
 router.put('/cel/:id', putCel);
+
+//Put banned
+router.put('/banned/:id', putBanned);
+
+//Put admin
+router.put('/admin/:id', putAdmin);
 
 //Delete User
 router.delete('/:id', deleteUser);
