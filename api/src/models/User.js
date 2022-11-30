@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
 		'user',
 		{
 			id: {
-				type: DataTypes.UUID,
+				type: DataTypes.STRING,
 				defaultValue: DataTypes.UUIDV4,
 				primaryKey: true
 			},
@@ -35,7 +35,7 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING
 			},
 			cel: {
-				type: DataTypes.INTEGER
+				type: DataTypes.STRING
 			}
 		},
 		{ timestamps: false }

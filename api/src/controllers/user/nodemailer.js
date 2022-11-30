@@ -25,4 +25,6 @@ const nodemailer = async (req, res) =>{
     }
   };
 
-  module.export = nodemailer
+  module.exports = {
+    nodemailer
+  }
