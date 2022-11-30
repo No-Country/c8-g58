@@ -34,12 +34,6 @@ router.put('/image/:id', putImage);
 //Put Cel
 router.put('/cel/:id', putCel);
 
-//Put banned
-router.put('/banned/:id', putBanned);
-
-//Put admin
-router.put('/admin/:id', putAdmin);
-
 //Delete User
 router.delete('/:id', deleteUser);
 
