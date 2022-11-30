@@ -2,7 +2,7 @@ const { User } = require('../../db')
 
 const postUser = async(req, res) => {
   try {
-    const { name, password, dni, years, email, image, cel } = req.body
+    const { id, name, password, dni, years, email, image, cel } = req.body
 
     const nameArray = name.split(' ')
     for (let i = 0; i < nameArray.length; i++){
@@ -17,6 +17,7 @@ const postUser = async(req, res) => {
     const nameDb = nameArray.join(' ')
 
     const userCreated = await User.create({
+      id,
       name: nameDb,
       password,
       dni,
