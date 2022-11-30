@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
 		'user',
 		{
 			id: {
-				type: DataTypes.UUID,
+				type: DataTypes.STRING,
 				defaultValue: DataTypes.UUIDV4,
 				primaryKey: true
 			},
@@ -35,15 +35,7 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING
 			},
 			cel: {
-				type: DataTypes.INTEGER
-			},
-			banned: {
-				type: DataTypes.BOOLEAN,
-				allowNull: false
-			},
-			admin: {
-				type: DataTypes.BOOLEAN,
-				allowNull: false
+				type: DataTypes.STRING
 			}
 		},
 		{ timestamps: false }
