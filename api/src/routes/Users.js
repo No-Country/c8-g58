@@ -8,11 +8,10 @@ const {
 	putEmail,
 	putPassword,
 	putImage,
-	putCel,
-	putBanned,
-	putAdmin
+	putCel
 } = require('../controllers/user/putUser');
 const { deleteUser } = require('../controllers/user/deleteUser');
+const { nodemailer } = require('../controllers/user/nodemailer');
 
 //Get Users
 router.get('/', getUsers);
@@ -46,5 +45,7 @@ router.delete('/:id', deleteUser);
 
 //Post User
 router.post('/', postUser);
+
+router.post('/contacto', nodemailer);
 
 module.exports = router;
