@@ -4,32 +4,19 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
 	// defino el modelo
 	sequelize.define(
-		'publication',
+		'review',
 		{
 			id: {
 				type: DataTypes.UUID,
 				defaultValue: DataTypes.UUIDV4,
 				primaryKey: true
 			},
-			name: {
-				type: DataTypes.STRING,
-				allowNull: false
+			like: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false
 			},
-			image: {
+			comment: {
 				type: DataTypes.STRING
-			},
-			text: {
-				type: DataTypes.STRING
-			},
-			event: {
-				type: DataTypes.STRING,
-				allowNull: false
-			},
-			location: {
-				type: DataTypes.STRING
-			},
-			date: {
-				type: DataTypes.DATEONLY
 			}
 		},
 		{ timestamps: false }

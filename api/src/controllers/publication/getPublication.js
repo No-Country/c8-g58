@@ -1,21 +1,11 @@
 const axios = require('axios');
-const { User, Publication } = require('../../db');
+const { User, Publication, Review } = require('../../db');
+const allInfo = require('./info.json');
 
 const preload = async () => {
 	try {
-		let concertsApi = await axios.get(
-			'https://api.seatgeek.com/2/events?client_id=MzAyMzcwODB8MTY2ODA4NjE2OS42NzE3MTc2'
-		);
-		let mapApi = concertsApi.data.events.map((e) => {
-			return {
-				name: e.performers[0].name,
-				image: e.performers[0].image,
-				text: e.performers[0].url,
-				event: e.type
-			};
-		});
-		mapApi.forEach(async (e) => {
-			await Publication.create(e);
+		allInfo.forEach(async (p) => {
+			await Publication.create(p);
 		});
 	} catch (e) {
 		console.log(e);
@@ -60,7 +50,7 @@ const filterByEvent = async (event) => {
 const getPublications = async (req, res) => {
 	const { name, location, event } = req.query;
 	try {
-		publicationsDb = await Publication.findAll({});
+		publicationsDb = await Publication.findAll({ include: Review });
 
 		if (name || location || event) {
 			var info;
@@ -83,6 +73,16 @@ const getPublications = async (req, res) => {
 	}
 };
 
+const getPublicationsUser = async (req, res) => {
+	try {
+		const { id } = req.params;
+		const userPublications = await Publication.finByPk(id);
+		res.status(200).send(userPublications);
+	} catch (error) {
+		res.send(error);
+	}
+};
+
 const getPublicationDetail = async (req, res) => {
 	const { id } = req.params;
 	const idUUID = id.length;
@@ -92,7 +92,8 @@ const getPublicationDetail = async (req, res) => {
 			res.status(200).json('codigo de la api');
 		} else if (idUUID === 36) {
 			const publicationDetail = await Publication.findAll({
-				where: { id: id }
+				where: { id: id },
+				include: Review
 			});
 			publicationDetail.length > 0
 				? res.status(200).json(publicationDetail)
@@ -140,43 +141,11 @@ const getBarrios = async (req, res) => {
 	}
 };
 
-// const getPublicationByName = async (req, res) => {
-// 	res.status(200).json('name');
-// };
-
-// const getPublicationByLocation = async (req, res) => {
-// 	const { location } = req.params;
-// 	if (location) {
-// 		const locationDb = location.toLowerCase();
-// 		const pubsByLocation = await Publication.findAll({
-// 			where: { location: locationDb }
-// 		});
-// 		pubsByLocation.length > 0
-// 			? res.status(200).json(pubsByLocation)
-// 			: res.status(500).json('No hay aca, perro');
-// 	}
-// };
-
-// const getPublicationByEvent = async (req, res) => {
-// 	const { event } = req.params;
-// 	const eventDb = event.toLowerCase();
-// 	if (event) {
-// 		const pubsByEvent = await Publication.findAll({
-// 			where: { event: eventDb }
-// 		});
-// 		pubsByEvent.length > 0
-// 			? res.json(pubsByEvent)
-// 			: res.json('No hay aca, perro');
-// 	}
-// };
-
 module.exports = {
 	preload,
 	getPublications,
 	getPublicationDetail,
 	getIdProvincia,
-	getBarrios
-	// getPublicationByName,
-	// getPublicationByLocation,
-	// getPublicationByEvent
+	getBarrios,
+	getPublicationsUser
 };
