@@ -32,7 +32,7 @@ function Settings() {
         >
           <div className="flex flex-row items-center justify-around s:justify-center">
             <img src="../src\assets\Home.png" alt="Home" className="w-8" />
-            <h2 className="mt-3 mb-3 text-white s:ml-3">Go Home</h2>
+            <h2 className="mt-3 mb-3 text-white s:ml-3">{t("settings.Go Home")}</h2>
           </div>
         </Link>
         <div className="bg-gradiante1 p-5 lg:mr-10 s:mr-0 s:w-3/4 s:text-center s:mb-5 md:w-1/2 lg:w-3/4 dark:bg-Lgradiante1">
@@ -43,7 +43,7 @@ function Settings() {
                 to="/Settings-User"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
-                User
+                {t("navbar.User")}
               </NavLink>
             </li>
             <span className="bg-gray h-0.1 w-full block"></span></>) : ""}
@@ -52,7 +52,7 @@ function Settings() {
                 to="/Settings-Configuration"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
-                Configuration
+                {t("navbar.Settings")}
               </NavLink>
             </li>
           </ul>
@@ -70,20 +70,20 @@ function Settings() {
               >
                 <div className="flex mt-3 mb-3 s:flex-col s:items-start">
                   <label htmlFor="fotoPerfil" className="mr-3">
-                    Profile Picture:
+                    {t("settings.Profile Picture")}
                   </label>
                   <input
                     type="file"
                     name="perfil"
                     id="fotoPerfil"
                     accept="image/*"
-                    className="s:w-full l:w-auto"
+                    className="s:w-full"
                   />
                 </div>
                 <span className="bg-gray h-0.1 w-full block"></span>
                 <div className="flex flex-col items-start mt-3 mb-3 w-full">
                   <label htmlFor="usuario" className="mr-3">
-                    Username:
+                    {t("settings.Username")}
                   </label>
                   <input
                     type="text"
@@ -95,7 +95,7 @@ function Settings() {
                 <span className="bg-gray h-0.1 w-full block"></span>
                 <div className="flex flex-col items-start mt-3 mb-3 w-full">
                   <label htmlFor="descripcion" className="mr-3">
-                    Description:
+                    {t("settings.Description")}
                   </label>
                   <textarea
                     name="descripcion"
@@ -108,16 +108,17 @@ function Settings() {
                 <span className="bg-gray h-0.1 w-full block"></span>
                 <div className="flex mt-3 mb-3 s:flex-col s:items-start">
                   <label htmlFor="fotoPortada" className="mr-3">
-                    Portrait Image:
+                    {t("settings.Portrait Image")}
                   </label>
                   <input
                     type="file"
                     name="portada"
                     id="fotoPortada"
                     accept="image/*"
-                    className="s:w-full l:w-auto"
+                    className="s:w-full"
                   />
                 </div>
+                
                 <input
                   type="submit"
                   value="Confirm"

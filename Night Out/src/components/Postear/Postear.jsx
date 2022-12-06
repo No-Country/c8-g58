@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 function Postear() {
+  const [t] = useTranslation('global')
   return (
     <div>
       <div className=" p-5 mb-3 s:px-3 md:px-5">
@@ -15,26 +17,26 @@ function Postear() {
           </div>
           <div className="bg-gray rounded-3xl w-3/4 p-5 flex lg:flex-row items-center text-xl s:flex-col">
             <select className="w-full bg-gray outline-none text-center border-none appearance-none font-semibold">
-              <option value="" selected="true" disabled="disabled">
+              <option value="" selected="true" disabled="disabled" hidden>
                 {" "}
-                Seleccionar evento
+                {t("postear.Select event")}
               </option>
               <option value="bar">Bar</option>
               <option value="boliche">Boliche</option>
               <option value="concierto">Concierto</option>
-              <option value="otroEvento">Otro</option>
+              <option value="otroEvento">{t("filters.Others")}</option>
             </select>
             <p>en</p>
             <select className="w-full bg-gray outline-none text-center appearance-none font-semibold">
-              <option value="" selected="true" disabled="disabled">
+              <option value="" selected="true" disabled="disabled" hidden>
                 {" "}
-                Seleccionar lugar
+                {t("postear.Select place")}
               </option>
               <option value="palermo">Palermo</option>
               <option value="recoleta">Recoleta</option>
               <option value="sanIsidro">San Isidro</option>
               <option value="tigre">Tigre</option>
-              <option value="otroLugar">Otro</option>
+              <option value="otroLugar">{t("filters.Others")}</option>
             </select>
           </div>
         </div>
@@ -44,7 +46,7 @@ function Postear() {
             id="description"
             cols="30"
             rows="10"
-            placeholder="Descripción"
+            placeholder={t("postear.Description")}
             maxLength="100"
             className="w-full rounded-3xl p-5 bg-gray text-black 2xl:max-h-16 resize-none outline-none s:max-h-28"
           ></textarea>

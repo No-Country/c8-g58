@@ -120,11 +120,11 @@ function Header() {
                 </li>
                 <li className="p-5 s:p-0">
                   { !user ? (<a
-                    className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 px-10 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1"
+                    className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 md:px-10 s:px-4 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1"
                     href="#logear"
                   >
                     {t("header.signin")}
-                  </a>) : (<button onClick={logOutSesion} className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 px-10 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1">
+                  </a>) : (<button onClick={logOutSesion} className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 md:px-10 s:px-4 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1">
                     <h2 >
                       {t("navbar.Log Out")}
                     </h2>
@@ -149,12 +149,17 @@ function Header() {
                   </Link>
                 </li>
                 <li className="p-5 s:p-0">
-                  <NavLink
-                    className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 px-10 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1"
+                  
+                  { !user ? (<NavLink
+                    className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 md:px-10  s:px-4 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1"
                     to="/Sign-In"
                   >
                     {t("header.signin")}
-                  </NavLink>
+                  </NavLink>) : (<button onClick={logOutSesion} className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 md:px-10 s:px-4 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1">
+                    <h2 >
+                      {t("navbar.Log Out")}
+                    </h2>
+                  </button>)}
                 </li>
               </ul>
             }
@@ -175,12 +180,17 @@ function Header() {
                   </Link>
                 </li>
                 <li className="p-5 s:p-0">
-                  <NavLink
-                    className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 px-10 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1"
+                  
+                  { !user ? (<NavLink
+                    className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 md:px-10 s:px-4 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1"
                     to="/Sign-In"
                   >
                     {t("header.signin")}
-                  </NavLink>
+                  </NavLink>) : (<button onClick={logOutSesion} className="p-4 rounded-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 md:px-10 s:px-4 hover:text-white dark:from-Lgradiante3 dark:via-Lgradiante2 dark:to-Lgradiante1">
+                    <h2 >
+                      {t("navbar.Log Out")}
+                    </h2>
+                  </button>)}
                 </li>
               </ul>
             }

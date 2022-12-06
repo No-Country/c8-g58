@@ -32,6 +32,11 @@
     "Search" : "Buscar",
     "Others" : "Otro"
   },
+  "postear" : {
+    "Select event" : "Seleccionar evento",
+    "Select place" : "Seleccionar lugar",
+    "Description" : "Descripción"
+  },
   "navbar":{
     "Followers" : "Seguidores",
       "Following" : "Seguidos",
@@ -100,10 +105,9 @@
 
   },
   "user":{
-    "Moderador" : "Moderador",
     "Description" : "Descripción",
-    "Moderador de Night Out" : "Moderador de Night Out"
-  
+    "Moderador de Night Out" : "Moderador de Night Out",
+    "Posts" : "Publicaciones"  
   },
   "footer":{
     "About us" : "Acerca de nosotros",
@@ -118,5 +122,13 @@
   "header":{
     "home": "Inicio",
     "signin": "Iniciar Sesion"
+  },
+  "settings" : {
+    "Go Home" : "Ir a inicio",
+    "Profile Picture" : "Foto de perfil:",
+    "Username" : "Nombre de usuario:",
+    "Description" : "Descripción:",
+    "Portrait Image" : "Imagen de la portada:",
+    "Darkmode" : "Modo Claro/Oscuro:"
   }
 }

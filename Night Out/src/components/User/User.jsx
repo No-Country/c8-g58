@@ -15,19 +15,19 @@ function User() {
                 <div className='flex flex-row items-end'>
                 <img src="src\assets\logo.png" alt="Foto Perfil" className='rounded-full 2xl:h-40 s:h-24 lg:h-32'/>
                 <div className=' font-medium text-xl text-center ml-5'>
-                <h2 className='s:text-lg'>{t("user.Moderador")}</h2>
-                <p className='s:text-lg'>@{t("user.Moderador")}</p>
+                <h2 className='s:text-lg'>Moderador</h2>
+                <p className='s:text-lg'>@Moderador</p>
                 </div>
                 </div>
             </div>
             <div className='mt-20 s:mt-10'>
                 <h2 className='text-2xl font-semibold s:text-xl'>{t("user.Description")}</h2>
-                <p className='text-lg pt-5 s:text-base'>{t("user.Night Out Mod")}</p>
+                <p className='text-lg pt-5 s:text-base'>Moderador de Night Out</p>
             </div>
             </div>
         </div>
         <div className='bg-violeta rounded-t-3xl mx-auto dark:bg-Lvioleta'>
-            <h2 className='text-2xl bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 p-3 rounded-t-3xl pl-5 s:text-xl dark:from-Lgradiante1 dark:via-Lgradiante2 dark:to-Lgradiante3'>Posts</h2>
+            <h2 className='text-2xl bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 p-3 rounded-t-3xl pl-5 s:text-xl dark:from-Lgradiante1 dark:via-Lgradiante2 dark:to-Lgradiante3'>{t("user.Posts")}</h2>
             <Posts />
             <Posts />
             <Posts />

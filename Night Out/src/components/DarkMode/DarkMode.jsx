@@ -1,8 +1,12 @@
+
+import { useTranslation } from 'react-i18next'
 import { React, useContext, useState } from "react";
 import { GlobalContext } from "../../Context/GlobalContext";
 
 
 function DarkMode() {
+  
+  const [t, i18n] = useTranslation('global')
 
     const { DarkMode, setDarkMode } = useContext(GlobalContext)
     const changeDarkMode = (mode) => {
@@ -23,7 +27,7 @@ function DarkMode() {
   return (
     <div className="w-full flex flex-row items-center">
       <p className="mr-3">
-        Dark/Light mode:
+        {t("settings.Darkmode")}
       </p>
       <select
         name="darkMode"

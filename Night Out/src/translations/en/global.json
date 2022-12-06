@@ -33,12 +33,18 @@
     "Others" : "Others",
     "User" : "User"
   },
+  "postear" : {
+    "Select event" : "Select event",
+    "Select place" : "Select place",
+    "Description" : "Description"
+  },
   "navbar":{
       "Followers" : "Followers",
       "Following" : "Following",
       "Settings" : "Settings",
       "Direct Messages" : "Direct Messages",
-      "Log Out" : "Log Out"
+      "Log Out" : "Log Out",
+      "User" : "User"
   },
   "Post":{
     "name" : "Name: ",
@@ -76,7 +82,7 @@
     "Sign in" : "Log in",
     "Log in!" : "Log in!",
     "Don't have an account yet?" : "Don't have an account yet?",
-    "Sign up!" : "Sign in!",
+    "Sign in!" : "Sign in!",
     "Let's go!" : "Let's go!"
 
   },
@@ -98,10 +104,9 @@
 
   },
   "user":{
-    "Moderador" : "Mod",
     "Description" : "Description",
-    "Moderador de Night Out" : "Night Out Mod"
-
+    "Moderador de Night Out" : "Night Out Mod",
+    "Posts" : "Posts"
   },
   "footer":{
     "About us" : "About us",
@@ -116,5 +121,13 @@
   "header":{
     "home" : "Home",
     "signin" : "Sign In"
+  },
+  "settings" : {
+    "Go Home" : "Go Home",
+    "Profile Picture" : "Profile Picture:",
+    "Username" : "Username:",
+    "Description" : "Description:",
+    "Portrait Image" : "Portrait Image:",
+    "Darkmode" : "Dark/Light mode:"
   }
 }
