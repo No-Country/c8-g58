@@ -3,18 +3,20 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
+const http = require('http');
+const { Server } = require('socket.io');
 
 require('./db.js');
 
-const server = express();
+const app = express();
 
-server.name = 'API';
+app.name = 'API';
 
-server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-server.use(bodyParser.json({ limit: '50mb' }));
-server.use(cookieParser());
-server.use(morgan('dev'));
-server.use((req, res, next) => {
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(cookieParser());
+app.use(morgan('dev'));
+app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
 	res.header('Access-Control-Allow-Credentials', 'true');
 	res.header(
@@ -25,10 +27,22 @@ server.use((req, res, next) => {
 	next();
 });
 
-server.use('/', routes);
+const serverApp = http.createServer(app);
+const io = new Server(serverApp, {
+	cors: {
+		oirgin: '*'
+	}
+});
+
+io.on('connection', (socket) => {
+	console.log(socket.id);
+	io.on('message', (message, name) => {});
+});
+
+app.use('/', routes);
 
 // Error catching endware.
-server.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
 	// eslint-disable-line no-unused-vars
 	const status = err.status || 500;
 	const message = err.message || err;
@@ -36,4 +50,4 @@ server.use((err, req, res, next) => {
 	res.status(status).send(message);
 });
 
-module.exports = server;
+module.exports = serverApp;
