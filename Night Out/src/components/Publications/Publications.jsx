@@ -33,7 +33,7 @@ function Publications() {
 
   return (
     <>
-      <div className="w-4/5 bg-lila s:w-full dark:bg-Llila">
+      <div className="w-4/5 bg-lila s:w-full dark:bg-Llila h-screen">
         <div className="flex flex-row justify-between items-center w-full bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 p-5 dark:from-Lgradiante1 dark:via-Lgradiante2 dark:to-Lgradiante3">
           <h2 className="text-white text-2xl s:text-xl">{t("header.home")}</h2>
           <div className="flex flex-row text-white items-center justify-around">
