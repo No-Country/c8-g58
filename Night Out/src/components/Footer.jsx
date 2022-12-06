@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="text-white flex flex-col items-center justify-evenly ">
       <span className="mt-8 h-0.1 bg-gray w-4/5"></span>
-      <h2 className="font-semibold text-2xl mt-8">Useful Links</h2>
+      <h2 className="font-semibold text-2xl mt-8">{t("footer.Useful Links")}</h2>
       <ul className="list-none flex md:flex-row font-semibold text-2xl mt-10 s:flex-col s:text-center s:text-xl">
         <li className="px-10 s:py-1">
           <a href="#">{t("footer.About us")}</a>
@@ -57,7 +57,7 @@ function Footer() {
           <h2 className="font-semibold text-2xl">{t("footer.Night Out")}</h2>
         </div>
         <h3 className="text-gray font-semibold text-md">
-          {t("footer.© All Rights Reserved")}
+          © All Rights Reserved
         </h3>
       </div>
     </footer>

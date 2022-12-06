@@ -37,7 +37,8 @@
       "Following" : "Seguidos",
       "Settings" : "Configuración",
       "Direct Messages" : "Mensajes Directos",
-      "Log Out" : "Cerrar Sesión"
+      "Log Out" : "Cerrar Sesión",
+      "User" : "Usuario"
   },
   "Post":{
     "name": "Nombre: ",
@@ -51,31 +52,33 @@
     "test": "prueba"
   },
   "hiw":{
+    "How it works" : "Como funciona",
     "First step" : "Primer paso",
     "Verify your identity" : "Verifica tu identidad",
     "Create your profile" : "Crea tu perfil y verificalo para empezar a usar Night Out.",
     "Second step" : "Segundo paso",
     "Set up your profile" : "Configura tu perfil.",
-    "Upload pictures..." : "Subi fotos, contale a la gente sobre vos y postea todos los lugares a los que te gustaria ir.",
+    "Upload pictures..." : "Subí fotos, contale a la gente sobre vos y publica todos los lugares a los que te gustaría ir.",
     "Third step" : "Tercer paso",
     "Connect." : "Conectate.",
-    "Find your next..." : "Descubri tu proxima salida y conoce gente nueva para juntarte.",
+    "Find your next..." : "Descubrí tu próxima salida y conoce gente nueva para juntarte.",
     "Easy, right?" : "Facil, no?"    
 
   },
   "introduction":{
     "The new way to make friends" : "La nueva manera de hacer amigos",
-    "Night Out is..." : "Night out es una plataforma pensada para personas que quieren salir, pero no saben con quien."
+    "Night Out is..." : "Night out es una plataforma pensada para personas que quieren salir, pero no saben con quién."
     
   },
   
   "signin":{
-    "What now?" : "Y ahora que?",
+    "What now?" : "Ahora que?",
     "Email" : "Email",
     "Password" : "Contraseña",
-    "Sign in" : "Ingresa",
+    "Sign in" : "Iniciar",
+    "Log in!" : "Inicia sesión!",
     "Don't have an account yet?" : "Aun no tenes una cuenta?",
-    "Sign up!" : "Registrate!",
+    "Sign in!" : "Registrate!",
     "Let's go!" : "Vamos!"
 
   },
@@ -105,11 +108,11 @@
   "footer":{
     "About us" : "Acerca de nosotros",
     "Team" : "Nuestro equipo",
+    "Useful Links" : "Enlaces utiles",
     "Services" : "Servicios",
     "Contact Us" : "Contacto",
-    "Subscribe to our newsletter!" : "suscribite a nuestro newsletter!",
-    "Night Out" : "Night Out",
-    "© All Rights Reserved" : "© Todos los derechos reservados"
+    "Subscribe to our newsletter!" : "Suscribite a para recibir noticias!",
+    "Night Out" : "Night Out"
 
   },
   "header":{

@@ -30,7 +30,8 @@
     "Event" : "Event",
     "Place" : "Place",
     "Search" : "Search",
-    "Others" : "Others"
+    "Others" : "Others",
+    "User" : "User"
   },
   "navbar":{
       "Followers" : "Followers",
@@ -51,6 +52,7 @@
     "test" : "test"
   },
   "hiw":{
+    "How it works" : "How it works",
     "First step" : "First step",
     "Verify your identity" : "Verify your identity",
     "Create your profile" : "Create your profile and get verified to start your journey with Night Out.",
@@ -71,9 +73,10 @@
     "What now?" : "What now?",
     "Email" : "Email",
     "Password" : "Password",
-    "Sign in" : "Sign in",
+    "Sign in" : "Log in",
+    "Log in!" : "Log in!",
     "Don't have an account yet?" : "Don't have an account yet?",
-    "Sign up!" : "Sign up!",
+    "Sign up!" : "Sign in!",
     "Let's go!" : "Let's go!"
 
   },
@@ -103,11 +106,11 @@
   "footer":{
     "About us" : "About us",
     "Team" : "Team",
+    "Useful Links" : "Useful Links",
     "Services" : "Services",
     "Contact Us" : "Contact Us",
     "Subscribe to our newsletter!" : "Subscribe to our newsletter!",
-    "Night Out" : "Night Out",
-    "© All Rights Reserved" : "© All Rights Reserved"
+    "Night Out" : "Night Out"
 
   },
   "header":{

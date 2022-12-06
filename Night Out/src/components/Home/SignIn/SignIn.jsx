@@ -102,7 +102,7 @@ function SignIn() {
       {t("signin.What now?")}
       </h2>
       <div className="bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 rounded-3xl lg:p-10 flex flex-col justify-evenly items-center lg:w-3/4 mb-10 s:w-full s:p-5 xl:w-1/2 2xl:w-1/3 dark:from-Lgradiante1 dark:via-Lgradiante2 dark:to-Lgradiante3">
-        <h2 className="font-bold text-4xl s:text-2xl md:text-3xl">Sign in!</h2>
+        <h2 className="font-bold text-4xl s:text-2xl md:text-3xl">{t("signin.Log in!")}</h2>
         <form
           className="flex flex-col w-full "
           action=""
@@ -159,7 +159,7 @@ function SignIn() {
         {t("signin.Don't have an account yet?")}
         </h2>
         <h2 className="font-bold text-4xl mb-10 s:text-2xl md:text-3xl">
-        {t("signin.Sign up!")}
+        {t("signin.Sign in!")}
         </h2>
         <button className="bg-gray rounded-full colorNegro h-8 md:text-xl mx-auto p-7 text-center flex justify-center items-center font-bold animate-pulse s:text-lg">
           {user ? (

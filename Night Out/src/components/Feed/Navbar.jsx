@@ -74,7 +74,7 @@ function Navbar() {
                 <>
                   <Link to="/User">
                     <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl">
-                      User
+                      {t("navbar.User")}
                     </h2>
                   </Link>
                   <span className="bg-black h-0.2 w-full block dark:h-0.2 dark:bg-lineaNavbar"></span>
