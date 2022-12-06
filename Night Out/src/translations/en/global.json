@@ -1,0 +1,117 @@
+{
+  "signUp":{
+    "missing-email": "Enter an email",
+    "invalid-email": "Enter a valid email",
+    "email-already-in-use": "This email is already in use, enter another one please",
+    "internal-error": "Enter a password, please",
+    "weak-password": "Weak password, please enter at least 6 characters",
+    "nameLength": "The name must contain at least 8 characters",
+    "nameLetter": "The name must only contain letters",
+    "dni": "Enter a valid ID (8 numbers)",
+    "cel+": "After the ' + ' enter only numbers, please",
+    "cel": "The phone must only contain numbers, please",
+    "check": "Accept terms and conditions to continue with the process",
+    "password": "Passwords do not match",
+    "registered": "You have successfully registered"
+  },
+  "signIn":{
+    "wrong-password": "Incorrect password",
+    "user-not-found": "user not found",
+    "not-email": "Enter an email, please",
+    "not-password": "Enter a password, please",
+    "correct": "session started, welcome ",
+    "close": "closed session"
+  },
+  "language":{
+    "change" : "Change Language"
+  },
+  "filters":{
+    "Filters" : "Filters",
+    "Event" : "Event",
+    "Place" : "Place",
+    "Search" : "Search",
+    "Others" : "Others"
+  },
+  "navbar":{
+      "Followers" : "Followers",
+      "Following" : "Following",
+      "Settings" : "Settings",
+      "Direct Messages" : "Direct Messages",
+      "Log Out" : "Log Out"
+  },
+  "Post":{
+    "name" : "Name: ",
+    "password" : "Password: "
+  },
+  "publications" :{
+    "Loading" : "Loading"
+  },
+  "home":{
+    "title" : "Night Out",
+    "test" : "test"
+  },
+  "hiw":{
+    "First step" : "First step",
+    "Verify your identity" : "Verify your identity",
+    "Create your profile" : "Create your profile and get verified to start your journey with Night Out.",
+    "Second step" : "Second step",
+    "Set up your profile" : "Set up your profile.",
+    "Upload pictures..." : "Upload pictures, tell people about you and post all the places you would like to go to.",
+    "Third step" : "Third step",
+    "Connect." : "Connect.",
+    "Find your next..." : "Find your next hang out and get to know new people to go out with.",
+    "Easy, right?" : "Easy, right?"
+  },
+  "introduction":{
+    "The new way to make friends" : "The new way to make friends",
+    "Night Out is..." : "Night Out is a platform made for people who want to go out, but don’t know who to go with."
+
+  },
+  "signin":{
+    "What now?" : "What now?",
+    "Email" : "Email",
+    "Password" : "Password",
+    "Sign in" : "Sign in",
+    "Don't have an account yet?" : "Don't have an account yet?",
+    "Sign up!" : "Sign up!",
+    "Let's go!" : "Let's go!"
+
+  },
+  "login":{
+    "Sign In" : "Sign In",
+    "Email" : "Email",
+    "Password" : "Password",
+    "Let's go!" : "Let's go!"
+
+  },
+  "pruebas":{
+
+  },
+  "signup":{
+    "Night Out - Sign Up" : "Night Out - Sign Up",
+    "Sign Up" : "Sign Up",
+    "Agree to Terms and Conditions" : "Agree to Terms and Conditions",
+    "Sign up!" : "Sign up!"
+
+  },
+  "user":{
+    "Moderador" : "Mod",
+    "Description" : "Description",
+    "Moderador de Night Out" : "Night Out Mod"
+
+  },
+  "footer":{
+    "About us" : "About us",
+    "Team" : "Team",
+    "Services" : "Services",
+    "Contact Us" : "Contact Us",
+    "Subscribe to our newsletter!" : "Subscribe to our newsletter!",
+    "Night Out" : "Night Out",
+    "© All Rights Reserved" : "© All Rights Reserved"
+
+  },
+  "header":{
+    "home" : "Home",
+    "signin" : "Sign In"
+  }
+}
