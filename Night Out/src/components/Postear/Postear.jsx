@@ -80,11 +80,11 @@ function Postear() {
 						<div className="bg-gray rounded-3xl w-3/4 p-5 flex lg:flex-row items-center text-xl s:flex-col">
 							<select
 								name="event"
-								value={data.event}
 								onChange={handleChange}
 								className="w-full bg-gray outline-none text-center border-none appearance-none font-semibold"
+								defaultValue="default"
 							>
-								<option value="" selected={true} disabled="disabled" hidden>
+								<option value="default" disabled="disabled" hidden>
 									{' '}
 									{t('postear.Select event')}
 								</option>
@@ -96,11 +96,11 @@ function Postear() {
 							<p>en</p>
 							<select
 								name="location"
-								value={data.location}
 								onChange={handleChange}
 								className="w-full bg-gray outline-none text-center appearance-none font-semibold"
+								defaultValue="default"
 							>
-								<option value="" selected={true} disabled="disabled" hidden>
+								<option value="default" disabled="disabled" hidden>
 									{' '}
 									{t('postear.Select place')}
 								</option>
