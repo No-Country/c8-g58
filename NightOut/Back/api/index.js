@@ -9,12 +9,8 @@ conn.sync({ force: false }).then(async () => {
 	if (!data.length) {
 		await preload();
 	}
-<<<<<<< HEAD:api/index.js
-	serverApp.listen(3001, () => {
-		console.log('%s listening at 3001'); // eslint-disable-line no-console
-=======
+
 	server.listen(PORT, () => {
 		console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
->>>>>>> main:NightOut/Back/api/index.js
 	});
 });
