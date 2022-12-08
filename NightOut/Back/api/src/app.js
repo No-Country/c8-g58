@@ -3,8 +3,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-const http = require('http');
-const { Server } = require('socket.io');
 
 require('./db.js');
 
@@ -27,18 +25,6 @@ app.use((req, res, next) => {
 	next();
 });
 
-const serverApp = http.createServer(app);
-const io = new Server(serverApp, {
-	cors: {
-		oirgin: '*'
-	}
-});
-
-io.on('connection', (socket) => {
-	console.log(socket.id);
-	io.on('message', (message, name) => {});
-});
-
 app.use('/', routes);
 
 // Error catching endware.
@@ -50,4 +36,4 @@ app.use((err, req, res, next) => {
 	res.status(status).send(message);
 });
 
-module.exports = serverApp;
+module.exports = app;

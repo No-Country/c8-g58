@@ -1,4 +1,4 @@
-const serverApp = require('./src/app.js');
+const app = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { preload } = require('./src/controllers/publication/getPublication.js');
 const { Publication } = require('./src/db.js');
@@ -10,7 +10,7 @@ conn.sync({ force: false }).then(async () => {
 		await preload();
 	}
 
-	server.listen(PORT, () => {
+	app.listen(PORT, () => {
 		console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
 	});
 });

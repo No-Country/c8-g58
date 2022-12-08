@@ -17,7 +17,7 @@ const { nodemailer } = require('../controllers/user/nodemailer');
 router.get('/', getUsers);
 
 //Get Users Detail
-router.get('/detail/:id', getUserDetail);
+router.get('/detail/:email', getUserDetail);
 
 //Put Name
 router.put('/name/:id', putName);
