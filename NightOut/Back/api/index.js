@@ -9,6 +9,7 @@ conn.sync({ force: false }).then(async () => {
 	if (!data.length) {
 		await preload();
 	}
+
 	server.listen(PORT, () => {
 		console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
 	});

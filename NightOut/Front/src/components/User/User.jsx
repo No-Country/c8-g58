@@ -51,10 +51,7 @@ function User() {
         <h2 className="text-2xl bg-gradient-to-r from-gradiante1 via-gradiante2 to-gradiante3 p-3 rounded-t-3xl pl-5 s:text-xl dark:from-Lgradiante1 dark:via-Lgradiante2 dark:to-Lgradiante3">
           {t("user.Posts")}
         </h2>
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
+        
       </div>
     </div>
   );
