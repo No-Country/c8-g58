@@ -23,9 +23,9 @@ const getUser = () => {
 	};
 };
 
-const getUserDetail = (id) => {
+const getUserDetail = (email) => {
 	return async function (dispatch) {
-		let userDetail = await axios.get(`${ROUTE}users/detail/${id}`);
+		let userDetail = await axios.get(`${ROUTE}users/detail/${email}`);
 		return dispatch({
 			type: GET_USER_DETAIL,
 			payload: userDetail.data
