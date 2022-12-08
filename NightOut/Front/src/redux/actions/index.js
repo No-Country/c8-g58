@@ -1,5 +1,5 @@
 import axios from 'axios';
-const ROUTE = 'http://localhost:3001/';
+// const ROUTE = 'http://localhost:3001/';
 export const GET_USER = 'GET_USER';
 export const GET_USER_DETAIL = 'GET_USER_DETAIL';
 export const POST_USER = 'POST_USER';
@@ -15,7 +15,7 @@ export const DELETE_REVIEW = 'DELETE_REVIEW';
 
 const getUser = () => {
 	return async function (dispatch) {
-		let user = await axios.get(`${ROUTE}users`);
+		let user = await axios.get(`/users`);
 		return dispatch({
 			type: GET_USER,
 			payload: user.data
@@ -25,7 +25,8 @@ const getUser = () => {
 
 const getUserDetail = (email) => {
 	return async function (dispatch) {
-		let userDetail = await axios.get(`${ROUTE}users/detail/${email}`);
+		let userDetail = await axios.get(`/users/detail/${email}`);
+
 		return dispatch({
 			type: GET_USER_DETAIL,
 			payload: userDetail.data
@@ -35,7 +36,7 @@ const getUserDetail = (email) => {
 
 const postUser = (payload) => {
 	return async function (dispatch) {
-		await axios.post(`${ROUTE}users`, payload);
+		await axios.post(`/users`, payload);
 		return dispatch({
 			type: POST_USER,
 			payload
@@ -45,31 +46,31 @@ const postUser = (payload) => {
 
 const putUser = (option, id, data) => {
 	return async function (dispatch) {
-		await axios.put(`${ROUTE}users/${option}/${id}`, data);
+		await axios.put(`/users/${option}/${id}`, data);
 	};
 };
 
 const putAdmin = (id) => {
 	return async function (dispatch) {
-		await axios.put(`${ROUTE}users/admin/${id}`);
+		await axios.put(`/users/admin/${id}`);
 	};
 };
 
 const putBan = (id) => {
 	return async function (dispatch) {
-		await axios.put(`${ROUTE}users/banner/${id}`);
+		await axios.put(`/users/banner/${id}`);
 	};
 };
 
 const deleteUser = (id) => {
 	return async function (dispatch) {
-		await axios.delete(`${ROUTE}users/${id}`);
+		await axios.delete(`/users/${id}`);
 	};
 };
 
 const getPublications = () => {
 	return async function (dispatch) {
-		let publications = await axios.get(`${ROUTE}publications`);
+		let publications = await axios.get(`/publications`);
 		return dispatch({
 			type: GET_PUBLICATIONS,
 			payload: publications.data
@@ -79,7 +80,7 @@ const getPublications = () => {
 
 const getPublicationsUser = (id) => {
 	return async function (dispatch) {
-		let userPublications = await axios.get(`${ROUTE}publications/user/${id}`);
+		let userPublications = await axios.get(`/publications/user/${id}`);
 		return dispatch({
 			type: GET_PUBLICATIONS_USER,
 			payload: userPublications.data
@@ -89,9 +90,7 @@ const getPublicationsUser = (id) => {
 
 const getPublicationDetail = (id) => {
 	return async function (dispatch) {
-		let publicationDetail = await axios.get(
-			`${ROUTE}publications/detail/${id}`
-		);
+		let publicationDetail = await axios.get(`/publications/detail/${id}`);
 		return dispatch({
 			type: GET_PUBLICATION_DETAIL,
 			payload: publicationDetail.data
@@ -101,7 +100,7 @@ const getPublicationDetail = (id) => {
 
 const filterByQuery = (params) => {
 	return async function (dispatch) {
-		let filterPublications = await axios.get(`${ROUTE}publications?${params}`);
+		let filterPublications = await axios.get(`/publications?${params}`);
 		return dispatch({
 			type: FILTER_BY_QUERY,
 			payload: filterPublications.data
@@ -111,7 +110,7 @@ const filterByQuery = (params) => {
 
 const postPublications = (payload) => {
 	return async function (dispatch) {
-		await axios.post(`${ROUTE}publications`, payload);
+		await axios.post(`/publications`, payload);
 		return dispatch({
 			type: POST_PUBLICATIONS,
 			payload
@@ -121,19 +120,19 @@ const postPublications = (payload) => {
 
 const putPublications = (option, id, data) => {
 	return async function (dispatch) {
-		await axios.put(`${ROUTE}publications/${option}/${id}`, data);
+		await axios.put(`/publications/${option}/${id}`, data);
 	};
 };
 
 const deletePublication = (id) => {
 	return async function (dispatch) {
-		await axios.delete(`${ROUTE}publications/${id}`);
+		await axios.delete(`/publications/${id}`);
 	};
 };
 
 const getProvinces = () => {
 	return async function (dispatch) {
-		let allProvinces = await axios.get(`${ROUTE}publications/idprovincia`);
+		let allProvinces = await axios.get(`/publications/idprovincia`);
 		return dispatch({
 			type: GET_PROVINCES,
 			payload: allProvinces.data
@@ -143,9 +142,7 @@ const getProvinces = () => {
 
 const getMunicipalities = (id) => {
 	return async function (dispatch) {
-		let allMunicipalities = await axios.get(
-			`${ROUTE}publications/barrios/${id}`
-		);
+		let allMunicipalities = await axios.get(`/publications/barrios/${id}`);
 		return dispatch({
 			type: GET_MUNICIPALITIES,
 			payload: allMunicipalities.data
@@ -155,13 +152,13 @@ const getMunicipalities = (id) => {
 
 const postReview = (payload) => {
 	return async function (dispatch) {
-		await axios.post(`${ROUTE}reviews`, payload);
+		await axios.post(`/reviews`, payload);
 	};
 };
 
 const deleteReview = (id) => {
 	return async function (dispatch) {
-		await axios.delete(`${ROUTE}reviews/${id}`);
+		await axios.delete(`/reviews/${id}`);
 	};
 };
 

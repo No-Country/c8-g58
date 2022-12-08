@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from 'react-i18next'
-import { Routes, Route } from 'react-router-dom'
 
-const Language = ({setLang}) => {
+const Language = () => {
 const [t, i18n] = useTranslation('global')
 
   const handleLanguage = (language) => {
-    setLang(language.target.value)
+    if(language.target.value === 'en') i18n.changeLanguage('en')
+    if(language.target.value === 'es') i18n.changeLanguage('es')
+    localStorage.setItem('language', language.target.value)
     console.log("Cambiando Lenguaje a " + language.target.value)
   }
   const idioma = localStorage.getItem('language')
