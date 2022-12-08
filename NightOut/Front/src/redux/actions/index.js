@@ -23,9 +23,10 @@ const getUser = () => {
 	};
 };
 
-const getUserDetail = (id) => {
+const getUserDetail = (email) => {
 	return async function (dispatch) {
-		let userDetail = await axios.get(`/users/detail/${id}`);
+		let userDetail = await axios.get(`/users/detail/${email}`);
+
 		return dispatch({
 			type: GET_USER_DETAIL,
 			payload: userDetail.data
@@ -89,9 +90,7 @@ const getPublicationsUser = (id) => {
 
 const getPublicationDetail = (id) => {
 	return async function (dispatch) {
-		let publicationDetail = await axios.get(
-			`/publications/detail/${id}`
-		);
+		let publicationDetail = await axios.get(`/publications/detail/${id}`);
 		return dispatch({
 			type: GET_PUBLICATION_DETAIL,
 			payload: publicationDetail.data
@@ -143,9 +142,7 @@ const getProvinces = () => {
 
 const getMunicipalities = (id) => {
 	return async function (dispatch) {
-		let allMunicipalities = await axios.get(
-			`/publications/barrios/${id}`
-		);
+		let allMunicipalities = await axios.get(`/publications/barrios/${id}`);
 		return dispatch({
 			type: GET_MUNICIPALITIES,
 			payload: allMunicipalities.data

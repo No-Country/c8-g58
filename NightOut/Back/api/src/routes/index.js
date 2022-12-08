@@ -8,4 +8,5 @@ const Reviews = require('./Reviews.js');
 router.use('/users', Users);
 router.use('/publications', Publications);
 router.use('/reviews', Reviews);
+
 module.exports = router;

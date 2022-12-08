@@ -1,36 +1,45 @@
-import React, { useState } from 'react';
-import { postPublications } from '../../redux/actions';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { postPublications, getUserDetail } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-
-import Logo from '../../assets/imagenes/logo.png'
-import flechaBlanca from '../../assets/imagenes/flechaBlanca.png'
-
+import Logo from '../../assets/imagenes/logo.png';
+import flechaBlanca from '../../assets/imagenes/flechaBlanca.png';
+import { UserAuth } from '../firebase/context/AuthContext';
 
 function Postear() {
-  const [t] = useTranslation('global');
+	const [t] = useTranslation('global');
 	const dispatch = useDispatch();
+	const userDetail = useSelector((state) => state.userDetail);
+	const { user } = UserAuth();
+	console.log(userDetail);
+	useEffect(() => {
+		if (user) {
+			dispatch(getUserDetail(user.email));
+		}
+	}, [user]);
 
 	const [data, setData] = useState({
-		name: '',
 		event: '',
 		text: '',
 		location: ''
 	});
 
 	const [error, setError] = useState({
-		name: '',
 		event: '',
 		text: '',
 		location: ''
 	});
 
 	function validate(state) {
+		let aux = {};
 		for (const i in state) {
-			if (i === '') {
-				setError({ ...error, i: `${i} es requerido` });
+			if (!state[i]) {
+				aux[i] = `${i} es requerido`;
+			} else {
+				aux[i] = ``;
 			}
 		}
+		return aux;
 	}
 
 	function handleChange(e) {
@@ -46,10 +55,10 @@ function Postear() {
 
 	const handleOnSubmit = async (e) => {
 		e.preventDefault();
-		if (!error.name && !error.event && !error.text && !error.location) {
-			dispatch(postPublications(data));
+		if (!error.event && !error.text && !error.location) {
+			console.log({ ...data, userId: userDetail.id });
+			dispatch(postPublications({ ...data, userId: userDetail.id }));
 			setData({
-				name: '',
 				event: '',
 				text: '',
 				location: ''
@@ -62,35 +71,18 @@ function Postear() {
 				<div className=" p-5 mb-3 s:px-3 md:px-5">
 					<div className="flex flex-row justify-evenly mb-5 items-center">
 						<div>
-							<img
-								src={Logo}
-								alt="foto perfil"
-								className="w-16 rounded-full"
-							/>
-							<p className="text-white ">Nombre</p>
+							<img src={Logo} alt="foto perfil" className="w-16 rounded-full" />
+							<p className="text-white ">{userDetail[0].name}</p>
 						</div>
-						{/*
-             <div className="relative">
-							<textarea
-								name="name"
-								cols="20"
-								rows="10"
-								value={data.name}
-								placeholder="¿A donde quieres ir?"
-								maxLength="50"
-								className="w-full rounded-3xl p-5 bg-gray text-black 2xl:max-h-16 resize-none outline-none s:max-h-28"
-								onChange={handleChange}
-							></textarea>
-						</div>
-             */}
+
 						<div className="bg-gray rounded-3xl w-3/4 p-5 flex lg:flex-row items-center text-xl s:flex-col">
 							<select
 								name="event"
-								value={data.event}
 								onChange={handleChange}
 								className="w-full bg-gray outline-none text-center border-none appearance-none font-semibold"
+								defaultValue="default"
 							>
-								<option value="" selected={true} disabled="disabled" hidden>
+								<option value="default" disabled="disabled" hidden>
 									{' '}
 									{t('postear.Select event')}
 								</option>
@@ -102,11 +94,11 @@ function Postear() {
 							<p>en</p>
 							<select
 								name="location"
-								value={data.location}
 								onChange={handleChange}
 								className="w-full bg-gray outline-none text-center appearance-none font-semibold"
+								defaultValue="default"
 							>
-								<option value="" selected={true} disabled="disabled" hidden>
+								<option value="default" disabled="disabled" hidden>
 									{' '}
 									{t('postear.Select place')}
 								</option>
@@ -143,7 +135,6 @@ function Postear() {
 			</form>
 		</>
 	);
-  
 }
 
 export default Postear;

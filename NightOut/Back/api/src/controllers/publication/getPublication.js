@@ -50,7 +50,12 @@ const filterByEvent = async (event) => {
 const getPublications = async (req, res) => {
 	const { name, location, event } = req.query;
 	try {
-		publicationsDb = await Publication.findAll({ include: Review });
+		publicationsDb = await Publication.findAll({
+			include: [
+				{ model: Review, required: false, include: User },
+				{ model: User, required: false }
+			]
+		});
 
 		if (name || location || event) {
 			var info;
