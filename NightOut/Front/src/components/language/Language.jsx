@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from 'react-i18next'
 
 const Language = () => {
-const [i18n] = useTranslation('global')
+const [t, i18n] = useTranslation('global')
 
   const handleLanguage = (language) => {
     if(language.target.value === 'en') i18n.changeLanguage('en')

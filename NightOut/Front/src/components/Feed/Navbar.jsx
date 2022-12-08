@@ -34,6 +34,10 @@ function Navbar() {
     navigate("/")
   }
 
+  const ocultar = () => {
+    NavbarMostrado === true ? setNavbarMostrado(false) : setNavbarMostrado(true)
+  }
+
   return (
     <div
       className={
@@ -74,8 +78,8 @@ function Navbar() {
             <li>
               {user ? (
                 <>
-                  <Link to="/User">
-                    <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl">
+                  <Link to="/User"zzz>
+                    <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl" onClick={ocultar}>
                       {t("navbar.User")}
                     </h2>
                   </Link>
@@ -86,7 +90,7 @@ function Navbar() {
               )}
             </li>
             <li>
-              <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl">
+              <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl" onClick={ocultar}>
                 {t("navbar.Direct Messages")}
               </h2>
               <span className="bg-black h-0.2 w-full block dark:h-0.2 dark:bg-lineaNavbar"></span>
@@ -94,13 +98,13 @@ function Navbar() {
             <li>
               {user ? (
                 <Link to="/Settings-User">
-                  <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl">
+                  <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl" onClick={ocultar}>
                     {t("navbar.Settings")}
                   </h2>
                 </Link>
               ) : (
                 <Link to="/Settings-Configuration">
-                  <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl">
+                  <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl" onClick={ocultar}>
                     {t("navbar.Settings")}
                   </h2>
                 </Link>
@@ -114,7 +118,7 @@ function Navbar() {
                     ? `Welcome ${userData[0].name}`
                     : ""}
                   <button onClick={logOutSesion}>
-                    <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl">
+                    <h2 className="pr-10 pl-10 text-3xl mt-2 mb-2 s:text-xl" onClick={ocultar}>
                       {t("navbar.Log Out")}
                     </h2>
                   </button>
